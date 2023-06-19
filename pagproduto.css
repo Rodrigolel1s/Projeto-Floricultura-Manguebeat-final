@@ -1,0 +1,541 @@
+@font-face {
+    font-family: KottaOne;
+    src: url("../fonts/KottaOne-Regular.ttf");
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ativa o modo escuro */
+.dark-mode {
+    background-color: #000000;
+    color: rgb(87, 87, 87);
+}
+
+.imagem-br {
+  position: relative;
+  width: 100px;
+  padding: 0%;
+  margin-top: -21px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+.imagem-usa {
+  position: relative;
+  width: 60px;
+  padding: 0%;
+  margin-top: -34px;
+  background-color: transparent;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* configura o cabeçalho */
+.header {
+    background-color: #A9F844;
+    padding-top: 0%;
+    padding-bottom: 0%;
+    text-align: center;
+    font-size: 35px;
+    margin-bottom: 0%;
+    width: 100%;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* formato do botão de modo escuro */
+.circle-button {
+    position: relative;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+    float: right;
+    margin-right: 5%;
+    margin-top: -1.3%;
+    margin-bottom: 0.2%;
+  }
+
+/* mexe com o botão criado para o modo noturno */
+.half-circle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+}
+
+/* mexe com o botão criado para o modo noturno */
+.black {
+    left: 0;
+    background-color: black;
+}
+
+/* mexe com o botão criado para o modo noturno */
+.white {
+    right: 0;
+    background-color: white;
+}
+
+/* mexe com o primeiro título do header, ou seja, "floricultura manguebeat" */
+.header h1 {
+    font-size: 90%;
+    text-align: left;
+    margin-top: auto;
+    margin-left: 5%;
+    margin-bottom: auto;
+    height: 0%;
+
+}
+
+/* mexe com o segundo título do header, ou seja, "o bico do beija flor..." */
+.header h2 {
+    text-align: left;
+    font-size: 45%;
+    font-style: italic;
+    margin-left: 5%;
+    margin-top: 0.5%;
+    margin-bottom: 1%;
+    font-family: kottaone;
+    text-align: left;
+
+}
+
+/* mexe com a barra  de navegação, a estrutura dela */
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0.938rem;
+    overflow: hidden;
+    background-color: #000000;
+    width: 100%;
+    border-radius: 0 0 20px 20px;
+    text-align: center;
+    font-size: 120%;
+}
+
+/* mexe com os "itens" da barra de navegação */
+.navbar li {
+    align-content: center;
+    display: inline-block;
+    margin-inline: 5%;
+    font-size: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    margin-left: 5%;
+}
+
+/* mexe com os "itens" da barra de navegação */
+.navbar li a {
+    display: block;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 100%;
+    border-radius: 15px;
+}
+
+/* mexe com o efeito hover dos "itens" da barra de navegação */
+.navbar li a:hover {
+    background-color: #ffffff;
+    color: black;
+
+}
+
+/* Container for flexboxes */
+.row {
+    display: -webkit-flex;
+    display: flex;
+}
+
+/* MEXE NA COLUNA A (A,B,C. DA ESQUERDA PRA DIREITA) */
+.columnA {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    align-content: center;
+    align-items: center;
+
+}
+
+/* mexe com a imagem do produto na coluna A */
+.img {
+    width: 60%;
+    height: 60%;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10%;
+    border-radius: 10%;
+
+}
+
+
+/* The grid: Four equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* The expanding image container */
+.container {
+    position: relative;
+    display: none;
+}
+
+/* Expanding image text */
+#imgtext {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+}
+
+/* Closable button inside the expanded image */
+.closebtn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: white;
+    font-size: 35px;
+    cursor: pointer;
+
+}
+
+.columnB {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    align-content: center;
+    align-items: center;
+
+
+}
+
+
+.columnC {
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 10px;
+    align-content: center;
+    align-items: center;
+
+}
+
+/* mexe na galeria de produtos */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 20px;
+}
+
+.product {
+    text-align: center;
+}
+
+.product img {
+    max-width: 100%;
+    max-height: 100%;
+    height: 50%;
+    object-fit: cover;
+    width: 70%;
+    border-radius: 5%;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+/* mexe no efeito hover do botão "adicionar ao carrinho" */
+.columnB .btn:hover {
+    background-color: #333;
+}
+
+/* mexe com a estrutura dos thumbnails, embaixo da imagem do produto */
+.product .thumbnails {
+    margin-top: 10px;
+}
+
+/* mexe nas imagens das thumbnails */
+.product .thumbnails img {
+    width: 15%;
+    max-height: 100%;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+
+}
+
+/* cor da borda dos thumbnails */
+.product .thumbnails img:hover {
+    border-color: #555;
+}
+
+/* cor do título do produto */
+.columnB h3 {
+    margin-top: 10%;
+    font-size: 2rem;
+    text-align: center;
+    margin-left: 0%;
+    margin-bottom: 10%;
+    color: #555;
+
+}
+
+/* cor da descrição do produto */
+.columnB p {
+    text-indent: 50px;
+    margin-top: 0%;
+    font-size: 22px;
+    text-align: justify;
+    margin-left: 0%;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 25%;
+
+
+}
+
+/* efeito hover para a descrição do produto, aumentando um pouco seu tamanho */
+.columnB p:hover {
+    font-size: 24px;
+    margin-bottom: 23.3%;
+
+
+}
+
+/* preço do produto */
+.columnB .price {
+    font-weight: bold;
+    font-size: 130%;
+    margin-top: 0%;
+    margin-bottom: 0.5%;
+    margin-left: 0%;
+    color: red;
+    text-align: center;
+
+}
+
+/* cores e efeitos no botão do "adicionar carrinho" */
+.columnB .btn {
+    text-align: center;
+    margin-top: 0%;
+    padding: 3%;
+    background-color: #ff3131;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-bottom: 0%;
+    margin-left: auto;
+    /* Empurra o botão para a direita */
+    margin-right: auto;
+    /* Empurra o botão para a esquerda */
+    display: block;
+    /* Transforma o botão em um elemento de bloco para ocupar toda a largura disponível */
+
+}
+
+
+
+
+/* rodapé */
+.footer {
+  width: 100%;
+  position: relative;
+  height: auto;
+  background-color: #000000;
+}
+
+.footer .col {
+  width: 190px;
+  height: auto;
+  float: left;
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  padding: 0px 20px 20px 20px;
+}
+
+.footer .col h1 {
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
+  font-size: 0.875rem;
+  line-height: 17px;
+  padding: 20px 0px 5px 0px;
+  color: white;
+  font-weight: normal;
+  text-transform: uppercase;
+  letter-spacing: 0.250em;
+}
+
+.footer .col ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer .col ul li {
+  color: #999999;
+  font-size: 0.875rem;
+  font-family: inherit;
+  font-weight: bold;
+  padding: 5px 0px 5px 0px;
+  cursor: pointer;
+  transition: .2s;
+  -webkit-transition: .2s;
+  -moz-transition: .2s;
+}
+
+.social ul li {
+  display: inline-block;
+  padding-right: 5px !important;
+}
+
+.footer .col ul li:hover {
+  color: #ffffff;
+  transition: .1s;
+  -webkit-transition: .1s;
+  -moz-transition: .1s;
+}
+
+.footer_social_media {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.8rem;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: white;
+  padding: 3px;
+}
+
+.footer_social_media .footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 2.5rem;
+  color: white;
+  border-radius: 50%;
+  transition: all 0.4s;
+}
+
+.footer_social_media .footer-link i {
+  font-size: 1.25rem;
+}
+
+.footer_social_media .footer-link:hover {
+  opacity: 0.8;
+}
+
+
+
+
+.clearfix {
+    clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+    .row {
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+    .contain {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (max-width: 1139px) {
+    .contain .social {
+        width: 1000px;
+        display: block;
+    }
+
+    .social h1 {
+        margin: 0px;
+    }
+}
+
+@media only screen and (max-width: 950px) {
+    .footer .col {
+        width: 33%;
+    }
+
+    .footer .col h1 {
+        font-size: 14px;
+    }
+
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .footer .col {
+        width: 50%;
+    }
+
+    .footer .col h1 {
+        font-size: 14px;
+    }
+
+    .footer .col ul li {
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 340px) {
+    .footer .col {
+        width: 100%;
+    }
+}
